@@ -11,8 +11,7 @@ the dashboard. It's an example of how to:
 * Create devices
 * Respond to device commands
 
-[!NOTE]
-For an AWS lambda example (which includes adding cron to auto run smartapp) using this [repo](https://github.com/SmartThingsCommunity/smartapp-example-no-devices-nodejs-lambda)
+> **Info:** For an AWS lambda example (which includes adding cron to auto run smartapp) using this [repo](https://github.com/SmartThingsCommunity/smartapp-example-no-devices-nodejs-lambda)
 
 ## File Structure
 
@@ -109,8 +108,7 @@ DEVICE_PROFILE_ID=85cdaa4a-ebc7-4459-9845-880ad34ae015  # Can be retrieved using
 and restart your NodeJS server. Do not restart ngrok or the URL will change (unless your are using a 
 paid account)
 
-[!NOTE]
-A new DEVICE_PROFILE_ID can be created using _smartthings deviceprofile:create_. It must have switch capabilities for the acme devices
+> **Note:** A new DEVICE_PROFILE_ID can be created using _smartthings deviceprofile:create_. It must have switch capabilities for the acme devices
 
 
 ### Install your SmartApp and visit the web page
@@ -127,12 +125,12 @@ Install your SmartApp using the SmartThings mobile app:
 4. Scroll down and select your Smart App
 5. Give requested access
 
-[!Note]
-If no SmartApps appear, [try enabling developer options and retrying](https://developer.smartthings.com/docs/devices/direct-connected/test-your-device-app/#enable-developer-mode-in-the-smartthings-app)
+> **Note:** If no SmartApps appear, [try enabling developer options and retrying](https://developer.smartthings.com/docs/devices/direct-connected/test-your-device-app/#enable-developer-mode-in-the-smartthings-app)
 
 Then visit your local web server to see and control devices and scenes:
 
 http://localhost:3001
 
 When you have selected the Installed App Instance you should see similar to the following:
-[Example Working App Screenshot](./public/images/LocalServerScreen.png)
+
+![Example Working App Screenshot](./public/images/LocalServerScreen.png?raw=true)
