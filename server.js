@@ -5,6 +5,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session')
 const path = require('path')
+const compression = require('compression') //SSE has deprecated the flush() used by SDK. This can be used as middleman
 const sse = require('./lib/sse')
 const indexRouter = require('./routes/index');
 const oauthRouter = require('./routes/oauth');
@@ -23,6 +24,8 @@ server.set('view engine', 'ejs')
 
 // Customize logging to include SmartApp lifecycle information on HTTP log, for debug purposes
 server.use(morgan((tokens, req, res) => {
+    console.log(req.body)
+    console.log(req.path)
     const result = [
         tokens.date(req, res, 'iso'),
         tokens.method(req, res),
@@ -61,6 +64,10 @@ const smartApp = require('./lib/smartapp');
 server.post('/smartapp', (req, res, next) => {
     smartApp.handleHttpCallback(req, res);
 });
+
+//SSE has deprecated the flush() used by SDK. This can be used as middleman
+//https://stackoverflow.com/questions/74845472/getting-res-flush-is-not-a-function-in-express-sse
+server.use(compression())
 
 // The route that handles Server-Sent Events to update the dashboard web page. This would not normally be part
 // of a SmartApp
