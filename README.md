@@ -120,7 +120,7 @@ Put the app into developer mode:
 
 Install your SmartApp using the SmartThings mobile app:
 1. Open smartthings app on device
-2. Select Automations
+2. Select Automations _(or this section might be called 'Routines')_
 3. Click the compass icon in top right.
 4. Scroll down and select your Smart App
 5. Give requested access
